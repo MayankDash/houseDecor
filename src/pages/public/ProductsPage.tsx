@@ -43,7 +43,7 @@ const PRODUCT_SEEDS = [
   "basket",     // 19 fruit basket
 ];
 
-interface MockProduct { id:string; name:string; price:number; catId:string; catName:string; imgIdx:number; featured:boolean; stock:number }
+interface MockProduct { id:string; name:string; price:number; catId:string; catName:string; imgIdx:number; featured?:boolean; stock?:number }
 const mp = ({ id, name, price, catId, catName, imgIdx, featured=false, stock=10 }: MockProduct): Product => ({
   id, name,
   description: "A beautifully handcrafted piece for your home.",

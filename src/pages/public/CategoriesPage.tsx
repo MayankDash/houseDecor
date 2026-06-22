@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { ROUTES } from "@/utils/constants";
 import { getImageUrl } from "@/utils/images";
@@ -51,7 +51,14 @@ const CATEGORIES = [
   },
 ];
 
-const fadeUp = { hidden: { opacity: 0, y: 36 }, visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.62, delay: i * 0.08, ease: "easeOut" } }) };
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 36 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.62, delay: i * 0.08, ease: "easeOut" }
+  })
+};
 
 export default function CategoriesPage() {
   return (
